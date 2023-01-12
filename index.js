@@ -7,10 +7,13 @@ let userSport = prompt("Какой ваш любимый вид спорта?");
 const userUkraine = "Украины";
 const userUSA = "США";
 const userEngland = "Англии";
+
 //Виды спорта и чемпионы
-const footballChampion = "Cristiano Ronaldo";
-const basketballChampion = "Майкл Джордан";
-if ((userCity === "Киев", userSport)) {
+const footballPlayer = "Криштиану Роналду";
+const basketballPlayer = "Майкл Джордан";
+const hockeyPlayer = "Уэйн Гретцки";
+
+if (userCity === "Киев" && userSport === "Футбол") {
   alert(`${userAge} / Ты живёшь в столице ${userUkraine}`);
 } else if (userCity === "Вашингтон") {
   alert(`${userAge} / Ты живёшь в столице ${userUSA}`);
