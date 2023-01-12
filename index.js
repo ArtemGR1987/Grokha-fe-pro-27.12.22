@@ -8,8 +8,9 @@ const userUkraine = "Украины";
 const userUSA = "США";
 const userEngland = "Англии";
 //Виды спорта и чемпионы
-
-if ((userCity === "Киев", userSport === "Футбол")) {
+const footballChampion = "Cristiano Ronaldo";
+const basketballChampion = "Майкл Джордан";
+if ((userCity === "Киев", userSport)) {
   alert(`${userAge} / Ты живёшь в столице ${userUkraine}`);
 } else if (userCity === "Вашингтон") {
   alert(`${userAge} / Ты живёшь в столице ${userUSA}`);
