@@ -8,7 +8,7 @@ const userUkraine = "Украины";
 const userUSA = "США";
 const userEngland = "Англии";
 
-if (userAge === "Null") {
+if (userAge === null) {
   alert("Жаль, что Вы не захотели ввести свой год рождения");
 }
 
