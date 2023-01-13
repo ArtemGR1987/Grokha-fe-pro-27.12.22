@@ -1,6 +1,6 @@
 "use strict";
 
-let userAge = +prompt("В каком году вы родились?");
+let userAge = prompt("В каком году вы родились?", "");
 let userCity = prompt("В каком городе вы проживаете?");
 let userSport = prompt("Какой ваш любимый вид спорта?");
 //Страны
@@ -8,17 +8,13 @@ const userUkraine = "Украины";
 const userUSA = "США";
 const userEngland = "Англии";
 
-if (userAge === null) {
-  alert("Жаль, что Вы не захотели ввести свой год рождения");
-}
-
 if (userCity === "Киев") {
   alert(`${userAge} / Ты живёшь в столице ${userUkraine}`);
 } else if (userCity === "Вашингтон") {
   alert(`${userAge} / Ты живёшь в столице ${userUSA}`);
 } else if (userCity === "Лондон") {
   alert(`${userAge} / Ты живёшь в столице ${userEngland}`);
-} else {
+} else if (userAge) {
   alert(`${userAge} / Ты живёшь в городе ${userCity}`);
 }
 
@@ -33,4 +29,15 @@ if (userSport === "Футбол") {
   alert(`Круто! Хочешь стать как ${basketballPlayer}?`);
 } else if (userSport === "Хоккей") {
   alert(`Круто! Хочешь стать как ${hockeyPlayer}?`);
+}
+
+//Если пользователь не захотел вводить данные
+if (userAge === null && userCity === null && userSport === null) {
+  alert("Жаль, что Вы не захотели ответить ни на один вопрос");
+} else if (userAge === null) {
+  alert("Жаль, что Вы не захотели ввести свой год рождения");
+} else if (userCity === null) {
+  alert("Жаль, что Вы не захотели ввести свой город");
+} else if (userSport === null) {
+  alert("Жаль, что Вы не захотели ввести свой любимый вид спорта");
 }
