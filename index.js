@@ -30,7 +30,7 @@ if (userCity === "Киев") {
 } else if (userCity === null && userAge === null) {
   alert(`Год рождения не указан / Город не указан`);
 } else if (userCity === null) {
-  alert(`${userAge} / Город не указан`);
+  alert(`Ты родился в ${userAge} году / Город не указан`);
 } else if (userAge === null) {
   alert(`Год рождения не указан / Ты живёшь в городе ${userCity}`);
 } else if (userAge) {
