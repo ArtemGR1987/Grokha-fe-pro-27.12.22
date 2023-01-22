@@ -5,3 +5,5 @@ const numbers = [
 ];
 
 console.log(numbers);
+
+let sum = 0;
