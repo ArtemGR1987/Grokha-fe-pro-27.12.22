@@ -22,3 +22,11 @@ let positiveNum = numbers.filter(function (num) {
 
 console.log("Положительные элементы: ", positiveNum);
 console.log("Количество положительных элементов: ", positiveNum.length);
+
+const minNumber = Math.min(...numbers);
+console.log(
+  "Минимальный элемент массива: ",
+  minNumber,
+  "и его порядковый номер: ",
+  numbers.indexOf(-63)
+);
