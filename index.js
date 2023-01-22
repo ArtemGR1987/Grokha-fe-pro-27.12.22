@@ -6,19 +6,19 @@ const numbers = [
 
 console.log(numbers);
 
-let sum = 0;
+let positiveSum = 0;
 
 for (let i = 0; i < numbers.length; i++) {
   if (numbers[i] > 0) {
-    sum += numbers[i];
+    positiveSum += numbers[i];
   }
 }
 
-console.log("Сумма положительных элементов:", sum);
+console.log("Сумма положительных элементов: ", positiveSum);
 
 let positiveNum = numbers.filter(function (num) {
   return num > 0;
 });
 
-console.log("Положительные элементы:", positiveNum);
-console.log("Количество положительных элементов:", positiveNum.length);
+console.log("Положительные элементы: ", positiveNum);
+console.log("Количество положительных элементов: ", positiveNum.length);
