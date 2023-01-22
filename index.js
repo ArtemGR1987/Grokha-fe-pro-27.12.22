@@ -14,10 +14,11 @@ for (let i = 0; i < numbers.length; i++) {
   }
 }
 
-console.log(sum, "Сумма положительных элементов");
+console.log("Сумма положительных элементов:", sum);
 
 let positiveNum = numbers.filter(function (num) {
   return num > 0;
 });
 
-console.log(positiveNum, "Положительные элементы");
+console.log("Положительные элементы:", positiveNum);
+console.log("Количество положительных элементов:", positiveNum.length);
