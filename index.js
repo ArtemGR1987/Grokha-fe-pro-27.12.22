@@ -7,3 +7,17 @@ const numbers = [
 console.log(numbers);
 
 let sum = 0;
+
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] > 0) {
+    sum += numbers[i];
+  }
+}
+
+console.log(sum, "Сумма положительных элементов");
+
+let positiveNum = numbers.filter(function (num) {
+  return num > 0;
+});
+
+console.log(positiveNum, "Положительные элементы");
