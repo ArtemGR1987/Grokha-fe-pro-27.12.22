@@ -30,3 +30,11 @@ console.log(
   "и его порядковый номер: ",
   numbers.indexOf(-63)
 );
+
+const maxNumber = Math.max(...numbers);
+console.log(
+  "Максимальный элемент массива: ",
+  maxNumber,
+  "и его порядковый номер: ",
+  numbers.indexOf(76)
+);
