@@ -45,3 +45,8 @@ let negativeNum = numbers.filter(function (num) {
 
 console.log("Отрицательные элементы: ", negativeNum);
 console.log("Количество отрицательных элементов: ", negativeNum.length);
+
+let pairedPosNum = positiveNum.filter((el, index, selfArr) => {
+  return selfArr.indexOf(el) !== index;
+});
+console.log(pairedPosNum);
