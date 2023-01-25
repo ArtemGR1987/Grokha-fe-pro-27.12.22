@@ -38,3 +38,10 @@ console.log(
   "и его порядковый номер: ",
   numbers.indexOf(76)
 );
+
+let negativeNum = numbers.filter(function (num) {
+  return num < 0;
+});
+
+console.log("Отрицательные элементы: ", negativeNum);
+console.log("Количество отрицательных элементов: ", negativeNum.length);
