@@ -56,3 +56,5 @@ console.log(
   "Количество непарных положительных элементов",
   unpairedPosNum.length
 );
+
+console.log("Количество парных положительных элементов", pairedPosNum.length);
