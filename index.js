@@ -4,7 +4,7 @@ const numbers = [
   76, -4, 12, -35, 4, 47,
 ];
 
-console.log(numbers);
+//console.log(numbers);
 
 let positiveSum = 0;
 
@@ -20,7 +20,7 @@ let positiveNum = numbers.filter(function (num) {
   return num > 0;
 });
 
-console.log("Положительные элементы: ", positiveNum);
+//console.log("Положительные элементы: ", positiveNum);
 console.log("Количество положительных элементов: ", positiveNum.length);
 
 const minNumber = Math.min(...numbers);
@@ -43,10 +43,16 @@ let negativeNum = numbers.filter(function (num) {
   return num < 0;
 });
 
-console.log("Отрицательные элементы: ", negativeNum);
+//console.log("Отрицательные элементы: ", negativeNum);
 console.log("Количество отрицательных элементов: ", negativeNum.length);
 
 let pairedPosNum = positiveNum.filter((el, index, selfArr) => {
   return selfArr.indexOf(el) !== index;
 });
-console.log(pairedPosNum);
+//console.log("Парные положительные элементы :", pairedPosNum);
+
+const unpairedPosNum = positiveNum.filter((el) => !pairedPosNum.includes(el));
+console.log(
+  "Количество непарных положительных элементов",
+  unpairedPosNum.length
+);
