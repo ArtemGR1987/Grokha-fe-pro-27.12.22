@@ -14,18 +14,18 @@ for (let i = 0; i < numbers.length; i++) {
   }
 }
 
-console.log("Сумма положительных элементов: ", positiveSum);
+console.log("1. Сумма положительных элементов: ", positiveSum);
 
 let positiveNum = numbers.filter(function (num) {
   return num > 0;
 });
 
 //console.log("Положительные элементы: ", positiveNum);
-console.log("Количество положительных элементов: ", positiveNum.length);
+console.log("1. Количество положительных элементов: ", positiveNum.length);
 
 const minNumber = Math.min(...numbers);
 console.log(
-  "Минимальный элемент массива: ",
+  "2. Минимальный элемент массива: ",
   minNumber,
   "и его порядковый номер: ",
   numbers.indexOf(-63)
@@ -33,7 +33,7 @@ console.log(
 
 const maxNumber = Math.max(...numbers);
 console.log(
-  "Максимальный элемент массива: ",
+  "3. Максимальный элемент массива: ",
   maxNumber,
   "и его порядковый номер: ",
   numbers.indexOf(76)
@@ -44,17 +44,34 @@ let negativeNum = numbers.filter(function (num) {
 });
 
 //console.log("Отрицательные элементы: ", negativeNum);
-console.log("Количество отрицательных элементов: ", negativeNum.length);
+console.log("4. Количество отрицательных элементов: ", negativeNum.length);
 
 let pairedPosNum = positiveNum.filter((el, index, selfArr) => {
   return selfArr.indexOf(el) !== index;
 });
-//console.log("Парные положительные элементы :", pairedPosNum);
+//console.log("Парные положительные элементы: ", pairedPosNum);
 
 const unpairedPosNum = positiveNum.filter((el) => !pairedPosNum.includes(el));
 console.log(
-  "Количество непарных положительных элементов",
+  "5. Количество непарных положительных элементов: ",
   unpairedPosNum.length
 );
 
-console.log("Количество парных положительных элементов", pairedPosNum.length);
+console.log(
+  "6. Количество парных положительных элементов: ",
+  pairedPosNum.length
+);
+
+let pairedPosSum = 0;
+
+for (let i = 0; i < pairedPosNum.length; i++) {
+  if (pairedPosNum[i] > 0) {
+    pairedPosSum += pairedPosNum[i];
+  }
+}
+
+console.log("Сумма парных положительных элементов: ", pairedPosSum * 2);
+console.log(
+  "Сумма непарных положительных элементов: ",
+  positiveSum - pairedPosSum * 2
+);
