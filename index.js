@@ -70,8 +70,8 @@ for (let i = 0; i < pairedPosNum.length; i++) {
   }
 }
 
-console.log("Сумма парных положительных элементов: ", pairedPosSum * 2);
+console.log("7. Сумма парных положительных элементов: ", pairedPosSum * 2);
 console.log(
-  "Сумма непарных положительных элементов: ",
+  "8. Сумма непарных положительных элементов: ",
   positiveSum - pairedPosSum * 2
 );
