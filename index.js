@@ -75,3 +75,20 @@ console.log(
   "8. Сумма непарных положительных элементов: ",
   positiveSum - pairedPosSum * 2
 );
+
+let multiArr = positiveNum.reduce((acc, mult) => acc * mult);
+console.log("9. Произведение положительных элементов: ", multiArr);
+
+let max = numbers[0];
+let maxi = 0;
+for (let i = 1; i < numbers.length; i++) {
+  if (numbers[i] > max) {
+    max = numbers[i];
+    numbers[maxi] = 0;
+    maxi = i;
+  } else {
+    numbers[i] = 0;
+  }
+}
+
+console.log("10. Обнулённый массив с наибольшим элементом", numbers);
