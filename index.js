@@ -18,3 +18,30 @@ function averageSum(arr) {
 }
 
 console.log(averageSum([30, "Hello", null, 20, 30, 40]));
+
+// Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y, рядок znak.
+// У змінній znak може бути: +, -, *, /, %, ^ (ступінь ).
+// Вивести результат математичної дії, вказаної в змінній znak.Обидва числа і знак виходять від користувача.
+function doMath(x, znak, y) {
+  if (znak === "+") {
+    return `Ваш результат - ${x + y}`;
+  } else if (znak === "-") {
+    return `Ваш результат - ${x - y}`;
+  } else if (znak === "*") {
+    return `Ваш результат - ${x * y}`;
+  } else if (znak === "/") {
+    return `Ваш результат - ${x / y}`;
+  } else if (znak === "%") {
+    return `Ваш результат - ${x % y}`;
+  } else if (znak === "^") {
+    return `Ваш результат - ${x ^ y}`;
+  } else {
+    console.log("Вы ввели неправильный знак");
+  }
+}
+
+let fistNumber = +prompt("Введите первое число");
+let znak = prompt("Выберите операцию", "- , + , * , / , % , ^");
+let secondNumber = +prompt("Введите второе число");
+
+console.log(doMath(fistNumber, znak, secondNumber));
