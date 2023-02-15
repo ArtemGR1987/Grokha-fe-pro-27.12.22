@@ -42,21 +42,26 @@
 
 // let fistNumber = +prompt("Введите первое число");
 // let znak = prompt("Выберите операцию", "- , + , * , / , % , ^");
-// let secondNumber = +prompt("Введите второе число");
+// let secondNumber = +prompt("Введите второе число");внутренний массив
 
 // console.log(doMath(fistNumber, znak, secondNumber));
 
 // Написати функцію заповнення даними користувача двомірного масиву.
 // Довжину основного масиву і внутрішніх масивів задає користувач.
 // Значення всіх елементів всіх масивів задає користувач.
-function newArr(lengthOut, lengthIn, filling) {
-  let array = new Array(lengthOut);
-  for (let i = 0; i < array.length; i++) {
-    array[i] = new Array(lengthIn).fill(filling);
-  }
-  return array;
-}
-let arrLengthOut = +prompt("Put the length of out array:");
-let arrLengthIn = +prompt("Put the length og inner array:");
-let arrFilling = prompt("Put the filling of array:");
-console.log(newArr(arrLengthOut, arrLengthIn, arrFilling));
+
+// function arrFill(mainArrLength, internalArrLength, elementValue) {
+//   let arrUser = new Array(mainArrLength);
+//   for (let i = 0; i < arrUser.length; i++) {
+//     arrUser[i] = new Array(mainArrLength).fill(elementValue);
+//   }
+//   return arrUser;
+// }
+// let mainArrLength = +prompt("Задайте длину основного массива");
+// let internalArrLength = +prompt("Задайте длину внутренних массивов");
+// let elementValue = prompt("Задайте элемент массива");
+// console.log(arrFill(mainArrLength, internalArrLength, elementValue));
+
+// Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом.
+// 'func(" hello world", ['l', 'd'])' поверне нам "heo wor".
+// Вихідний рядок та символи для видалення задає користувач.
