@@ -10,7 +10,11 @@ class Student {
   }
 
   age() {
-    return birthYear;
+    const now = new Date();
+    const yearDiff = now.getFullYear() - this.birthYear;
+    const birthdayThisYear = new Date(now.setFullYear(this.birthYear));
+    const hasHadBirthdayThisYear = birthdayThisYear <= now;
+    return hasHadBirthdayThisYear ? yearDiff : yearDiff - 1;
   }
 
   present() {
@@ -83,6 +87,7 @@ student1.present();
 student1.present();
 student1.present();
 student1.absent();
+console.log(`Олександру ${student1.age()} рік`);
 console.log(student1.summary());
 
 const student2 = new Student("Марія", "Петренко", 2001);
@@ -91,6 +96,7 @@ student2.grades = [90, 92, 94, 88];
 student2.present();
 student2.present();
 student2.present();
+console.log(`Марії ${student2.age()} роки`);
 console.log(student2.summary());
 
 const student3 = new Student("Іван", "Сидоренко", 2003);
@@ -99,4 +105,5 @@ student3.grades = [80, 85, 90, 75];
 student3.absent();
 student3.absent();
 student3.absent();
+console.log(`Івану ${student3.age()} років`);
 console.log(student3.summary());
