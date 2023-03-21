@@ -25,3 +25,8 @@
     margin-top: 20px;
     margin-left: 60px;
 }
+
+#order-form {
+    display: none;
+    margin-left: 280px;
+}

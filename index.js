@@ -141,17 +141,27 @@ productList.addEventListener("click", (event) => {
 const productInfo = document.getElementById("product-info");
 
 function showProductInfo(name, price, description) {
-  productInfo.innerHTML = `<div><strong>${name}</strong></div><div>${description}</div><button onclick="buyProduct(); showProducts()">Купить за ${price} $.</button>`;
+  productInfo.innerHTML = `<div><strong>${name}</strong></div><div>${description}</div>`;
+  const orderForm = document.getElementById("order-form");
+  const orderButton = document.createElement("button");
+  orderButton.textContent = `Купить за ${price} $.`;
+  orderButton.onclick = function () {
+    orderForm.style.display = "block";
+  };
+  productInfo.appendChild(orderButton);
 }
 
-// const buyButton = document.querySelector("button");
-// console.log(buyButton);
-// function showProductInfo(name, price, description) {
-//   productInfo.innerHTML = `<div> <strong>${name}</strong> </div> <div>${description}</div> <form> <label for="full-name">ФИО покупателя:</label> <input type="text" id="full-name" name="full-name" required> <br> <label for="city">Город:</label> <select id="city" name="city" required> <option value="">--Выберите город--</option> <option value="Москва">Москва</option> <option value="Санкт-Петербург">Санкт-Петербург</option> <option value="Новосибирск">Новосибирск</option> </select> <br> <label for="post-office">Отделение почты для отправки:</label> <input type="text" id="post-office" name="post-office" required> <br> <label for="payment-method">Способ оплаты:</label> <input type="radio" id="payment-method" name="payment-method" value="cash-on-delivery" required> Послеоплата <input type="radio" id="payment-method" name="payment-method" value="bank-card" required> Оплата банковской картой <br> <label for="quantity">Количество продукции:</label> <input type="number" id="quantity" name="quantity" min="1" required> <br> <label for="comment">Комментарий к заказу:</label> <textarea id="comment" name="comment"></textarea> <br> <button type="submit">Оформить заказ</button> </form>`;
+// function buyProduct() {
+//   alert("Товар добавлен в корзину!");
+//   productInfo.innerHTML = "";
+//   showProducts(currentCategory);
 // }
 
-function buyProduct() {
-  alert("Товар добавлен в корзину!");
-  productInfo.innerHTML = "";
-  showProducts(currentCategory);
+function submitOrder() {
+  const fullName = document.getElementById("full-name").value;
+  const city = document.getElementById("city").value;
+  const postOffice = document.getElementById("post-office").value;
+  const paymentMethod = document.getElementById("payment-method").value;
+  const quantity = document.getElementById("quantity").value;
+  const comment = document.getElementById("comment").value;
 }
