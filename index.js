@@ -164,4 +164,28 @@ function submitOrder() {
   const paymentMethod = document.getElementById("payment-method").value;
   const quantity = document.getElementById("quantity").value;
   const comment = document.getElementById("comment").value;
+
+  if (
+    fullName === "" ||
+    city === "" ||
+    postOffice === "" ||
+    paymentMethod === "" ||
+    quantity === ""
+  ) {
+    alert("Пожалуйста, заполните все обязательные поля.");
+    return;
+  }
+
+  const orderInfo = `
+    <p>Количество продукции: ${quantity}</p>
+    <p>Информация о доставке:</p>
+    <ul>
+      <li>ФИО покупателя: ${fullName}</li>
+      <li>Город: ${city}</li>
+      <li>Отделение новой почты: ${postOffice}</li>
+    </ul>
+    <p>Способ оплаты: ${paymentMethod}</p>
+    <p>Комментарий к заказу: ${comment}</p>
+  `;
+  document.getElementById("order-form").innerHTML = orderInfo;
 }
