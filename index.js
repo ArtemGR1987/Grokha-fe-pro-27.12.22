@@ -151,12 +151,6 @@ function showProductInfo(name, price, description) {
   productInfo.appendChild(orderButton);
 }
 
-// function buyProduct() {
-//   alert("Товар добавлен в корзину!");
-//   productInfo.innerHTML = "";
-//   showProducts(currentCategory);
-// }
-
 function submitOrder() {
   const fullName = document.getElementById("full-name").value;
   const city = document.getElementById("city").value;
@@ -165,16 +159,16 @@ function submitOrder() {
   const quantity = document.getElementById("quantity").value;
   const comment = document.getElementById("comment").value;
 
-  if (
-    fullName === "" ||
-    city === "" ||
-    postOffice === "" ||
-    paymentMethod === "" ||
-    quantity === ""
-  ) {
-    alert("Пожалуйста, заполните все обязательные поля.");
-    return;
-  }
+  // if (
+  //   fullName === "" ||
+  //   city === "" ||
+  //   postOffice === "" ||
+  //   paymentMethod === "" ||
+  //   quantity === ""
+  // ) {
+  //   alert("Пожалуйста, заполните все обязательные поля.");
+  //   return;
+  // }
 
   const orderInfo = `
     <p>Количество продукции: ${quantity}</p>
