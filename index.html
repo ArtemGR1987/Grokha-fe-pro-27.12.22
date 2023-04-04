@@ -7,17 +7,16 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Поиск поста по ID</h1>
-    <form id="form">
-      <label for="post-id">Введите ID поста (от 1 до 100):</label>
-      <input type="number" id="post-id" name="postId" min="1" max="100" />
-      <button type="submit">Найти пост</button>
+    <form class="form">
+      <label for="input__lable">
+        <span class="input__span">Номер id поста</span>
+        <input class="id__input" type="text" />
+      </label>
+      <button type="submit" class="input__btn">Добавить пост</button>
     </form>
-    <div id="post-container"></div>
-    <button id="comments-btn" style="display: none">
-      Получить комментарии
-    </button>
-    <ul id="comments-container"></ul>
-    <script src="/index.js"></script>
+    <div class="post__box"></div>
+    <button class="btn__comment">Комментарии</button>
+    <div class="comment__wrapp"></div>
+    <script src="./index.js"></script>
   </body>
 </html>
