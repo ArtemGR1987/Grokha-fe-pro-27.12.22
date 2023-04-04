@@ -151,35 +151,126 @@ function showProductInfo(name, price, description) {
   productInfo.appendChild(orderButton);
 }
 
+// function submitOrder() {
+//   const fullName = document.getElementById("full-name").value;
+//   const city = document.getElementById("city").value;
+//   const postOffice = document.getElementById("post-office").value;
+//   const paymentMethod = document.getElementById("payment-method").value;
+//   const quantity = document.getElementById("quantity").value;
+//   const comment = document.getElementById("comment").value;
+
+//   // if (
+//   //   fullName === "" ||
+//   //   city === "" ||
+//   //   postOffice === "" ||
+//   //   paymentMethod === "" ||
+//   //   quantity === ""
+//   // ) {
+//   //   alert("Пожалуйста, заполните все обязательные поля.");
+//   //   return;
+//   // }
+
+//   const orderInfo = `
+//     <p>Количество продукции: ${quantity}</p>
+//     <p>Информация о доставке:</p>
+//     <ul>
+//       <li>ФИО покупателя: ${fullName}</li>
+//       <li>Город: ${city}</li>
+//       <li>Отделение новой почты: ${postOffice}</li>
+//     </ul>
+//     <p>Способ оплаты: ${paymentMethod}</p>
+//     <p>Комментарий к заказу: ${comment}</p>
+//   `;
+//   document.getElementById("order-form").innerHTML = orderInfo;
+// }
+
+function validateStringLength(value, maxLength) {
+  return value.length <= maxLength;
+}
+
+function validateForValue(value) {
+  const regex = /^[A-Za-z]+$/;
+  return regex.test(value);
+}
+
+function validateOrderForm() {
+  const fullNameInput = document.getElementById("full-name");
+  const cityInput = document.getElementById("city");
+  const postOfficeInput = document.getElementById("post-office");
+  const paymentMethodInput = document.getElementById("payment-method");
+  const quantityInput = document.getElementById("quantity");
+
+  const inputs = [
+    {
+      name: "fullName",
+      inputEl: fullNameInput,
+      maxLengthValue: 100,
+      validationRules: [validateStringLength, validateForValue],
+      isValid: false,
+      isValidValue: false,
+      isValidLength: false,
+    },
+    {
+      name: "city",
+      inputEl: cityInput,
+      maxLengthValue: 100,
+      validationRules: [validateForValue],
+      isValid: false,
+      isValidValue: false,
+      isValidLength: false,
+    },
+    {
+      name: "postOffice",
+      inputEl: postOfficeInput,
+      maxLengthValue: 100,
+      validationRules: [validateStringLength, validateForValue],
+      isValid: false,
+      isValidValue: false,
+      isValidLength: false,
+    },
+    {
+      name: "paymentMethod",
+      inputEl: paymentMethodInput,
+      maxLengthValue: 100,
+      validationRules: [validateForValue],
+      isValid: false,
+      isValidValue: false,
+      isValidLength: false,
+    },
+    {
+      name: "quantity",
+      inputEl: quantityInput,
+      maxLengthValue: 100,
+      validationRules: [validateStringLength, validateForValue],
+      isValid: false,
+      isValidValue: false,
+      isValidLength: false,
+    },
+  ];
+
+  let isFormValid = true;
+
+  for (const input of inputs) {
+    const value = input.inputEl.value.trim();
+    input.isValidLength = validateStringLength(value, input.maxLengthValue);
+    input.isValidValue = validateForValue(value);
+    input.isValid = input.isValidLength && input.isValidValue;
+
+    if (!input.isValid) {
+      isFormValid = false;
+      const errorEl = document.createElement("div");
+      errorEl.innerText = `Ошибка в поле "${input.name}"`;
+      input.inputEl.parentNode.insertBefore(errorEl, input.inputEl.nextSibling);
+    }
+  }
+
+  return isFormValid;
+}
+
 function submitOrder() {
-  const fullName = document.getElementById("full-name").value;
-  const city = document.getElementById("city").value;
-  const postOffice = document.getElementById("post-office").value;
-  const paymentMethod = document.getElementById("payment-method").value;
-  const quantity = document.getElementById("quantity").value;
-  const comment = document.getElementById("comment").value;
+  const isFormValid = validateOrderForm();
 
-  // if (
-  //   fullName === "" ||
-  //   city === "" ||
-  //   postOffice === "" ||
-  //   paymentMethod === "" ||
-  //   quantity === ""
-  // ) {
-  //   alert("Пожалуйста, заполните все обязательные поля.");
-  //   return;
-  // }
-
-  const orderInfo = `
-    <p>Количество продукции: ${quantity}</p>
-    <p>Информация о доставке:</p>
-    <ul>
-      <li>ФИО покупателя: ${fullName}</li>
-      <li>Город: ${city}</li>
-      <li>Отделение новой почты: ${postOffice}</li>
-    </ul>
-    <p>Способ оплаты: ${paymentMethod}</p>
-    <p>Комментарий к заказу: ${comment}</p>
-  `;
-  document.getElementById("order-form").innerHTML = orderInfo;
+  if (isFormValid) {
+    // отправка заказа
+  }
 }
