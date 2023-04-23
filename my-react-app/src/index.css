@@ -22,7 +22,7 @@ nav ul {
 }
 
 nav li {
-  display: inline-block;
+  display: block;
   margin-right: 10px;
 }
 
@@ -38,4 +38,9 @@ nav a {
 main {
   flex: 1;
   padding: 20px;
+  margin-left: 100px;
+}
+
+.Section {
+  display: flex;
 }
