@@ -9,22 +9,23 @@ function App() {
           <ul>
             <li>
               <a href="https://www.w3schools.com/react/react_getstarted.asp">
-                Пункт меню 1
+                React Getting Started
               </a>
             </li>
             <li>
-              <a href="https://react.dev/learn">Пункт меню 2</a>
+              <a href="https://react.dev/learn">Learn React
+              </a>
             </li>
             <li>
               <a href="https://create-react-app.dev/docs/getting-started/">
-                Пункт меню 3
+                Create React App 
               </a>
             </li>
           </ul>
         </nav>
         <main>
           <h2>Ласкаво просимо до мого додатку!</h2>
-          <p>Це мій перший React додаток з трьома блоками.</p>
+          <p>Це React додаток з трьома блоками.</p>
         </main>
       </div>
     </div>
